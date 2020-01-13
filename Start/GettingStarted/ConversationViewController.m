@@ -136,13 +136,7 @@
     [self.inputTextField resignFirstResponder];
     self.inputTextField.enabled = NO;
     [self.activityIndicator startAnimating];
-    [self.conversation sendText:message completionHandler:^(NSError * _Nullable error) {
-        dispatch_async(dispatch_get_main_queue(), ^{
-            self.inputTextField.enabled = YES;
-            [self.activityIndicator stopAnimating];
-            [self getEvents];
-        });
-    }];
+    
 }
 
 
