@@ -10,14 +10,14 @@
 
 
 
-#define kJaneName @"Jane"
-#define kJaneUUID @"" //TODO: swap with a user uuid for Jane
-#define kJaneJWT @"" //TODO: swap with a token for Jane
+#define kAliceName @"Alice"
+#define kAliceUUID @"" //TODO: swap with a user uuid for Alice
+#define kAliceJWT @"" //TODO: swap with a token for Alice
 
 
-#define kJoeName @"Joe"
-#define kJoeUUID @"" //TODO: swap with a user uuid for Joe
-#define kJoeJWT @"" //TODO: swap with a token for Joe
+#define kBobName @"Bob"
+#define kBobUUID @"" //TODO: swap with a user uuid for Bob
+#define kBobJWT @"" //TODO: swap with a token for Bob
 
 
 #define kConversationUUID @"" //TODO: swap with a phone number to call
@@ -33,7 +33,7 @@
 
 -(instancetype)initWithName:(NSString *)name uuid:(NSString *)uuid jwt:(NSString *)jwt interlocutor:(NSString *)interlocutor;
 
-+(instancetype)Jane;
-+(instancetype)Joe;
++(instancetype)Alice;
++(instancetype)Bob;
 @end
 

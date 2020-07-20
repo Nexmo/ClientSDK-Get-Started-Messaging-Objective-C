@@ -14,8 +14,8 @@
 
 @interface UserSelectionViewController () <NXMClientDelegate>
 
-@property (weak, nonatomic) IBOutlet UIButton *loginJaneButton;
-@property (weak, nonatomic) IBOutlet UIButton *loginJoeButton;
+@property (weak, nonatomic) IBOutlet UIButton *loginAliceButton;
+@property (weak, nonatomic) IBOutlet UIButton *loginBobButton;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 @property (weak, nonatomic) IBOutlet UILabel *statusLabel;
 
@@ -42,12 +42,12 @@
 
 //MARK: Setup Nexmo Client
 
-- (IBAction)loginAsJane:(id)sender {
-    [self loginAs:[User Jane]];
+- (IBAction)loginAsAlice:(id)sender {
+    [self loginAs:[User Alice]];
 }
 
-- (IBAction)loginAsJoe:(id)sender {
-    [self loginAs:[User Joe]];
+- (IBAction)loginAsBob:(id)sender {
+    [self loginAs:[User Bob]];
 }
 
 -(void)loginAs:(User *)user {
@@ -92,8 +92,8 @@
         });
         return;
     }
-    self.loginJaneButton.alpha = 1;
-    self.loginJoeButton.alpha = 1;
+    self.loginAliceButton.alpha = 1;
+    self.loginBobButton.alpha = 1;
     [self.activityIndicator stopAnimating];
     self.statusLabel.alpha = 0;
     if (self.user == nil) {
@@ -105,15 +105,15 @@
             self.statusLabel.alpha = 1;
             break;
         case NXMConnectionStatusConnecting:
-            self.loginJaneButton.alpha = 0;
-            self.loginJoeButton.alpha = 0;
+            self.loginAliceButton.alpha = 0;
+            self.loginBobButton.alpha = 0;
             [self.activityIndicator startAnimating];
             self.statusLabel.text = [NSString stringWithFormat:@"Connecting as %@", self.user.name];
             self.statusLabel.alpha = 1;
             break;
         case NXMConnectionStatusConnected:
-            self.loginJaneButton.alpha = 0;
-            self.loginJoeButton.alpha = 0;
+            self.loginAliceButton.alpha = 0;
+            self.loginBobButton.alpha = 0;
             self.statusLabel.text = [NSString stringWithFormat:@"Connected as %@", self.user.name];
             self.statusLabel.alpha = 1;
             break;

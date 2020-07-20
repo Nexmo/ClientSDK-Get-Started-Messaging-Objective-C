@@ -20,12 +20,12 @@
     return self;
 }
 
-+(instancetype)Jane {
-    return [[User alloc] initWithName:kJaneName uuid:kJaneUUID jwt:kJaneJWT interlocutor:@"Joe"];
++(instancetype)Alice {
+    return [[User alloc] initWithName:kAliceName uuid:kAliceUUID jwt:kAliceJWT interlocutor:@"Bob"];
 }
 
-+(instancetype)Joe {
-    return [[User alloc] initWithName:kJoeName uuid:kJoeUUID jwt:kJoeJWT interlocutor:@"Jane"];
++(instancetype)Bob {
+    return [[User alloc] initWithName:kBobName uuid:kBobUUID jwt:kBobJWT interlocutor:@"Alice"];
 }
 
 @end
